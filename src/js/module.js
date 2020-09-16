@@ -12,11 +12,11 @@
         form.reset();
     }
 
-    const getUpdatedTemplate = () => {
+    const getUpdatedTemplate = (task) => {
         return `
             <div class="content">
                 <button class="checkbox"></button>
-                <input type="text" disabled value="Выучить JavaScript" class="taskInput"/>
+                <input type="text" disabled value="${task}" class="taskInput"/>
             </div>
             <div class="actions">
                 <button class="star"></button>
