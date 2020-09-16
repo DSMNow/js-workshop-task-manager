@@ -12,11 +12,25 @@
         form.reset();
     }
 
+    const getUpdatedTemplate = () => {
+        return `
+            <div class="content">
+                <button class="checkbox"></button>
+                <input type="text" disabled value="Выучить JavaScript" class="taskInput"/>
+            </div>
+            <div class="actions">
+                <button class="star"></button>
+                <button class="edit"></button>
+                <button class="remove"></button>
+            </div>
+        `
+    }
+
     const addTask = (task) => {
         const tasksDom = document.querySelector('.tasks');
         const taskDom = document.createElement('li');
 
-        taskDom.innerHTML = task;
+        taskDom.innerHTML = getUpdatedTemplate(task);
         tasksDom.prepend(taskDom);
     }
 
