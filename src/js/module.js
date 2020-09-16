@@ -7,9 +7,11 @@
         const formData = new FormData(event.target);
         const task = formData.get('task');
 
-        addTask(task);
+        if (task.trim()) {
+            addTask(task);
 
-        form.reset();
+            form.reset();
+        }
     }
 
     const getUpdatedTemplate = (task) => {
@@ -60,9 +62,6 @@
 
         addRemoveHandler(taskDom);
         addCompleteHandler(taskDom);
+        addFavoriteHandler(taskDom);
     }
-
-    // const addTask = function (task) {
-
-    // }
 }
