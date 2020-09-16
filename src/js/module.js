@@ -26,12 +26,26 @@
         `
     }
 
+    const addRemoveHandler = (taskDom) => {
+        const removeDom = taskDom.querySelector('.remove');
+
+        removeDom.onclick = () => {
+            taskDom.remove();
+        }
+    }
+
+    const addCompleteHandler = (taskDom) => {
+        const checkboxDom = taskDom.querySelector('.checkbox');
+    }
+
     const addTask = (task) => {
         const tasksDom = document.querySelector('.tasks');
         const taskDom = document.createElement('li');
 
         taskDom.innerHTML = getUpdatedTemplate(task);
         tasksDom.prepend(taskDom);
+
+        addRemoveHandler(taskDom);
     }
 
     // const addTask = function (task) {
