@@ -34,8 +34,21 @@
         }
     }
 
+    const addFavoriteHandler = (taskDom) => {
+        const starDom = taskDom.querySelector('.star');
+
+        starDom.onclick = () => {
+            starDom.classList.toggle('selected');
+        }
+    }
+
     const addCompleteHandler = (taskDom) => {
         const checkboxDom = taskDom.querySelector('.checkbox');
+
+        checkboxDom.onclick = () => {
+            checkboxDom.classList.toggle('selected');
+            taskDom.classList.toggle('completed');
+        }
     }
 
     const addTask = (task) => {
@@ -46,6 +59,7 @@
         tasksDom.prepend(taskDom);
 
         addRemoveHandler(taskDom);
+        addCompleteHandler(taskDom);
     }
 
     // const addTask = function (task) {
